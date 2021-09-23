@@ -1,19 +1,15 @@
 package inorder_traversal
 
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
+import "github.com/gotoprosperity/algorithm/binary_tree/util"
 
-func inorderTraversal(root *TreeNode) []int {
+func inorderTraversal(root *util.TreeNode) []int {
 	// return inorderTraversalRecursively(root)
 	return inorderTraversalUnrecursionWithStack(root)
 }
 
-func inorderTraversalUnrecursionWithStack(n *TreeNode) []int {
+func inorderTraversalUnrecursionWithStack(n *util.TreeNode) []int {
 	var (
-		s    = []*TreeNode{}
+		s    = []*util.TreeNode{}
 		ret  = []int{}
 		node = n
 	)
@@ -32,7 +28,7 @@ func inorderTraversalUnrecursionWithStack(n *TreeNode) []int {
 	return ret
 }
 
-func inorderTraversalRecursively(n *TreeNode) []int {
+func inorderTraversalRecursively(n *util.TreeNode) []int {
 	if n == nil {
 		return []int{}
 	}
