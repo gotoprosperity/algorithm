@@ -1,7 +1,5 @@
 package inorder_traversal
 
-//import "github.com/gotoprosperity/algorithm/tree/util"
-
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
