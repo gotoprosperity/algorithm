@@ -17,3 +17,18 @@ func GenerateLinkedList(vals []int) *Node {
 	}
 	return root.Next
 }
+
+func LengthOfLinkedList(node *Node) int {
+	length := 0
+	if node == nil {
+		return length
+	}
+	for {
+		length++
+		node = node.Next
+		if node == nil {
+			break
+		}
+	}
+	return length
+}
