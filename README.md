@@ -27,4 +27,21 @@
 由于此项目不作为leetcode题解查询，更偏重于典型题目的集合，因此不建议走题目号索引。
 
 ## 项目目录
-// todo
+
+|--结构1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|--题目1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--题目/思路描述<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--解法代码<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--单测用例<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|--题目2<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--题目/思路描述<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--解法代码<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--单测用例<br>
+&nbsp;&nbsp;&nbsp;&nbsp;|--工具目录<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--结构定义<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|--工具方法<br>
+|--结构2<br>
+|-- ...<br>
+|--
+
+------
