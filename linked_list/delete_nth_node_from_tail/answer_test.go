@@ -3,11 +3,11 @@ package delete_nth_node_from_tail
 import (
 	"testing"
 
-	"github.com/gotoprosperity/algorithm/linked_list/util"
+	"github.com/gotoprosperity/algorithm/util"
 )
 
 func TestDelNode(t *testing.T) {
-	var l, ret *util.Node
+	var l, ret *util.ListNode
 	l = util.GenerateLinkedList([]int{1, 2, 3})
 	ret = delNode(l, 1)
 	util.PrintLinkedList(ret)

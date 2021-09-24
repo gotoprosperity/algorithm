@@ -1,8 +1,8 @@
 package remove_repeated_node_in_sorted_linked_list
 
-import "github.com/gotoprosperity/algorithm/linked_list/util"
+import "github.com/gotoprosperity/algorithm/util"
 
-func RmNode(root *util.Node) {
+func RmNode(root *util.ListNode) {
 	if root == nil {
 		return
 	}

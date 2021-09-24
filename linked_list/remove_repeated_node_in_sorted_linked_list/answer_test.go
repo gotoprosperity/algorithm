@@ -3,12 +3,12 @@ package remove_repeated_node_in_sorted_linked_list
 import (
 	"testing"
 
-	"github.com/gotoprosperity/algorithm/linked_list/util"
+	"github.com/gotoprosperity/algorithm/util"
 )
 
 func TestRmNode(t *testing.T) {
 	var (
-		l      *util.Node
+		l      *util.ListNode
 		length int
 	)
 	// case 1

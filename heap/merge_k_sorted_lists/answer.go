@@ -2,21 +2,18 @@ package merge_k_sorted_lists
 
 import (
 	"container/heap"
+
+	"github.com/gotoprosperity/algorithm/util"
 )
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
-
-func mergeKLists(lists []*ListNode) *ListNode {
+func mergeKLists(lists []*util.ListNode) *util.ListNode {
 	//return mergeKListsWithPQ(lists) // 优先队列
 	return mergeKListsReduce(lists) // 归并合并
 }
 
 // 构造pq
 type Item struct {
-	Node *ListNode
+	Node *util.ListNode
 	Idx  int
 }
 
@@ -36,7 +33,7 @@ func (pq PriorityQueue) Swap(i, j int) {
 }
 
 func (pq *PriorityQueue) Push(ln interface{}) {
-	item := ln.(*ListNode)
+	item := ln.(*util.ListNode)
 	node := &Item{Node: item}
 	n := len(*pq)
 	node.Idx = n
@@ -53,7 +50,7 @@ func (pq *PriorityQueue) Pop() interface{} {
 }
 
 //// 优先队列解法
-func mergeKListsWithPQ(lists []*ListNode) *ListNode {
+func mergeKListsWithPQ(lists []*util.ListNode) *util.ListNode {
 	pq := PriorityQueue{}
 	// push
 	for _, list := range lists {
@@ -63,18 +60,18 @@ func mergeKListsWithPQ(lists []*ListNode) *ListNode {
 		}
 	}
 	//
-	head := &ListNode{}
+	head := &util.ListNode{}
 	tmp := head
 	for pq.Len() > 0 {
-		item := heap.Pop(&pq).(*ListNode)
-		tmp.Next = &ListNode{Val: item.Val}
+		item := heap.Pop(&pq).(*util.ListNode)
+		tmp.Next = &util.ListNode{Val: item.Val}
 		tmp = tmp.Next
 	}
 	return head.Next
 }
 
 //// 归并方式解法
-func mergeKListsReduce(lists []*ListNode) *ListNode {
+func mergeKListsReduce(lists []*util.ListNode) *util.ListNode {
 	if len(lists) == 0 {
 		return nil
 	}
@@ -90,14 +87,14 @@ func mergeKListsReduce(lists []*ListNode) *ListNode {
 }
 
 // 合并两个有序链表的原子方法
-func mergeTwoLists(l1, l2 *ListNode) *ListNode {
+func mergeTwoLists(l1, l2 *util.ListNode) *util.ListNode {
 	if l1 == nil {
 		return l2
 	}
 	if l2 == nil {
 		return l1
 	}
-	ret := &ListNode{}
+	ret := &util.ListNode{}
 	tmp := ret
 	for l1 != nil && l2 != nil {
 		if l1.Val < l2.Val {

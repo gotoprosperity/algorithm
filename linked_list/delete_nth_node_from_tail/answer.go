@@ -1,10 +1,10 @@
 package delete_nth_node_from_tail
 
 import (
-	"github.com/gotoprosperity/algorithm/linked_list/util"
+	"github.com/gotoprosperity/algorithm/util"
 )
 
-func delNode(root *util.Node, n int) *util.Node {
+func delNode(root *util.ListNode, n int) *util.ListNode {
 	if n < 1 || root == nil {
 		return nil
 	}

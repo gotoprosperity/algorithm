@@ -1,15 +1,15 @@
 package inorder_traversal
 
-import "github.com/gotoprosperity/algorithm/binary_tree/util"
+import "github.com/gotoprosperity/algorithm/util"
 
-func inorderTraversal(root *util.TreeNode) []int {
+func inorderTraversal(root *util.BinaryTreeNode) []int {
 	// return inorderTraversalRecursively(root)
 	return inorderTraversalUnrecursionWithStack(root)
 }
 
-func inorderTraversalUnrecursionWithStack(n *util.TreeNode) []int {
+func inorderTraversalUnrecursionWithStack(n *util.BinaryTreeNode) []int {
 	var (
-		s    = []*util.TreeNode{}
+		s    = []*util.BinaryTreeNode{}
 		ret  = []int{}
 		node = n
 	)
@@ -28,7 +28,7 @@ func inorderTraversalUnrecursionWithStack(n *util.TreeNode) []int {
 	return ret
 }
 
-func inorderTraversalRecursively(n *util.TreeNode) []int {
+func inorderTraversalRecursively(n *util.BinaryTreeNode) []int {
 	if n == nil {
 		return []int{}
 	}
