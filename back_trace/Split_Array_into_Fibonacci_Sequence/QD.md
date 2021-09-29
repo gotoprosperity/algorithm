@@ -54,6 +54,6 @@ Constraints:
 
 ----
 
-leetcode 842
+leetcode 842，也类似 leetcode 306
 
 回溯+剪枝
