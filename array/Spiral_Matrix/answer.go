@@ -1,6 +1,4 @@
-package print_2D_clockwise
-
-import "fmt"
+package Spiral_Matrix
 
 // 方向枚举
 type Dire int
@@ -16,29 +14,30 @@ type Pos struct {
 	X, Y int
 }
 
-func PrintSquare(s [][]int) {
-	if len(s) == 0 { // 一行也没有，不用打印
-		return
+func spiralOrder(matrix [][]int) []int {
+	var ret []int
+	if len(matrix) == 0 { // 一行也没有，不用打印
+		return ret
 	}
-	if len(s[0]) == 0 { // 一列也没有，不用打印
-		return
+	if len(matrix[0]) == 0 { // 一列也没有，不用打印
+		return ret
 	}
 	count := 0 // 用于记录已经遍历的次数
-	record := make([][]int, len(s))
-	for i := 0; i < len(s); i++ {
-		record[i] = make([]int, len(s[0]))
+	record := make([][]int, len(matrix))
+	for i := 0; i < len(matrix); i++ {
+		record[i] = make([]int, len(matrix[0]))
 	}
 	// 起始位置
 	pos := Pos{0, 0}
 	dire := Right
-	for count < len(s)*len(s[0]) { // 当遍历次数打到元素个数时结束
-		x := s[pos.Y][pos.X]
-		fmt.Printf("%d ", x) // 打印
+	ret = make([]int, len(matrix)*len(matrix[0]))
+	for count < len(matrix)*len(matrix[0]) { // 当遍历次数打到元素个数时结束
+		x := matrix[pos.Y][pos.X]
+		ret[count] = x
 		pos, record, dire = newPos(pos, record, dire)
 		count++
 	}
-	fmt.Printf("\n")
-	// end
+	return ret
 }
 
 func newPos(pos Pos, record [][]int, dire Dire) (newPos Pos, newRecord [][]int, newDire Dire) {
